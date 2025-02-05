@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function processSubarrays(subarrays) {
+    // Step 1: Flatten the subarrays
+    const flattenedArray = subarrays.flat();
+
+    // Step 2: Remove duplicates
+    const uniqueArray = [...new Set(flattenedArray)];
+
+    // Step 3: Calculate the sum
+    const sum = uniqueArray.reduce((acc, curr) => acc + curr, 0);
+
+    return { uniqueArray, sum };
+}
+
+// Example input
+const subarrays = [[1, 2, 3], [3, 4, 5], [5, 6, 7]];
+
+const result = processSubarrays(subarrays);
+console.log("Unique Array:", result.uniqueArray);
+console.log("Sum:", result.sum);
+</script>
+</body>
+</html>
